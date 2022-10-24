@@ -7,7 +7,7 @@ function App() {
 
   const ops = ['/', '*', '+', '-', '.'];
 
-  const updateCalc = value =>{
+  const updateCalc = value => {
     if(
       ops.includes(value) && calc === '' ||
       ops.includes(value) && ops.includes(calc.slice(-1))
@@ -26,9 +26,7 @@ function App() {
     const digits = [];
 
     for (let i = 1; i < 10; i++){
-      digits.push(
-        <button onClick={() => updateCalc(i.toString())} key={i}>{i}</button>
-      )
+      digits.push(<button onClick={() => updateCalc(i.toString())} key={i}>{i}</button>)
     }
     return digits;
   }
@@ -52,8 +50,7 @@ function App() {
     <div className="App">
       <div className="calculator">
         <div className="display">
-          {result ? <span>({result})</span> : '' }
-          { calc || "0"}
+          {result ? <span>({result})</span> : '' }{ calc || "0"}
         </div>
 
         <div className="operator">
